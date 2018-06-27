@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:8
 
 
 RUN apt-get update &&\
@@ -11,4 +11,5 @@ RUN apt-get update &&\
         python-pip \
         zip \
         ca-certificates &&\
-    pip install awscli
+    pip install awscli &&\
+    npm install -g npm
