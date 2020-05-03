@@ -1,5 +1,4 @@
-FROM node:8
-
+FROM node:12
 
 RUN apt-get update &&\
     apt-get -qq install \
@@ -12,4 +11,6 @@ RUN apt-get update &&\
         zip \
         ca-certificates &&\
     pip install awscli &&\
-    npm install -g npm
+    npm install -g serverless
+
+
