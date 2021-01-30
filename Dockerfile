@@ -1,9 +1,21 @@
-FROM node:12-alpine
+FROM node:12
 
-RUN apk add --no-cache \
-        python3 \
-        py3-pip \
-    && pip3 install --upgrade pip \
-    && pip3 install \
-        awscli \
-    && npm install -g serverless netlify-cli cypress --unsafe
+RUN apt-get update &&\
+    apt-get -qq install \
+        build-essential \
+        libssl-dev \
+        libffi-dev \
+        libgtk2.0-0 \
+        libnotify-dev \
+        libgconf-2-4 \
+        libnss3 \
+        libxss1 \
+        libasound2 \
+        xvfb \
+        python-dev \
+        python \
+        python-pip \
+        zip \
+        ca-certificates &&\
+    pip install awscli &&\
+    npm install -g serverless netlify-cli cypress
