@@ -18,5 +18,4 @@ RUN apt-get update &&\
         zip \
         ca-certificates &&\
     pip install awscli &&\
-    npm install -g serverless &&\
-    npm i -g netlify-cli
+    npm install -g serverless netlify-cli cypress
