@@ -1,4 +1,4 @@
-FROM node:12
+FROM cypress/base
 
 RUN apt-get update &&\
     apt-get -qq install \
