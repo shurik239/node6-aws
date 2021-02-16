@@ -1,4 +1,4 @@
-FROM cypress/base
+FROM cypress/base:14
 
 RUN apt-get update &&\
     apt-get -qq install \
@@ -17,5 +17,9 @@ RUN apt-get update &&\
         python-pip \
         zip \
         ca-certificates &&\
-    pip install awscli &&\
-    npm install -g serverless netlify-cli cypress --unsafe
+    pip install awscli
+
+RUN npm i -g npm@7
+
+RUN npm install -g serverless netlify-cli cypress --unsafe
+
